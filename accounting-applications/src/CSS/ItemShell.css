@@ -1,0 +1,8 @@
+.item-shell {
+    padding: 10px;
+    background-color: rgb(126, 165, 197);
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  

@@ -1,0 +1,33 @@
+.form-element {
+    color:rgb(236, 235, 235);
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 
+          -1px -1px 0px #000,
+           0px -1px 0px #000,
+           1px -1px 0px #000,
+          -1px  0px 0px #000,
+           1px  0px 0px #000,
+          -1px  1px 0px #000,
+           0px  1px 0px #000,
+           1px  1px 0px #000;
+    padding: 4px;
+  }
+  
+  .form-data {
+    background-color: rgb(126, 165, 197);
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  
+  .new-item-form-simple {
+    text-align: right;
+    width: 300px;
+    height: 50px;
+    font-size: 25px;
+    border: 1px solid white;
+    color: white;
+    background-color: rgb(84, 84, 167);
+    border-radius: 10px;
+  }

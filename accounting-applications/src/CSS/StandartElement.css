@@ -1,0 +1,28 @@
+.input-standart {
+    width: 250px;
+    height: 30px;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 5px;
+  }
+  
+  .button-standart {
+    text-align: center;
+    width: 300px;
+    height: 50px;
+    font-size: 25px;
+    border: 1px solid white;
+    color: white;
+    background-color: rgb(84, 84, 167);
+    border-radius: 10px;
+    margin: 5px;
+  }
+  
+  .text-standart {
+    font-size: 25px;
+  }
+  
+  .center-text {
+    text-align: center;
+    padding: 15px;
+  }
