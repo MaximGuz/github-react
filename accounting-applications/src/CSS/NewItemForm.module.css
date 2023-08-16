@@ -20,14 +20,3 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
   }
-  
-  .new-item-form-simple {
-    text-align: right;
-    width: 300px;
-    height: 50px;
-    font-size: 25px;
-    border: 1px solid white;
-    color: white;
-    background-color: rgb(84, 84, 167);
-    border-radius: 10px;
-  }
