@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../CSS/NewItemForm.css"
-import "../CSS/StandartElement.css"
+import formStyles from "../CSS/NewItemForm.module.css"
+import standartElement from "../CSS/StandartElement.module.css"
 import { uid } from "./GlobalFunction";
 
 const NewItemForm = (props) => {
@@ -39,29 +39,29 @@ const NewItemForm = (props) => {
 
     if (props.NewForm === false) {
         return (
-            <div className="form-data center-text">
-                <button className="new-item-form-simple" onClick={()=> props.setNewItemFormHandler(true)}>Добавить новый расход</button>
+            <div className={`${formStyles["form-data"]} ${standartElement["center-text"]}`}>
+                <button className={standartElement["button-standart"]} onClick={()=> props.setNewItemFormHandler(true)}>Добавить новый расход</button>
             </div>
         )
     } else {
             return (
-                <form className="form-data">
-                    <div className="form_element">
-                        <p className="text-standart">Наименование</p>
-                        <input type="text" value={name} className="inputStandart" onChange={setNameHandler}/>
+                <form className={formStyles["form-data"]}>
+                    <div className={formStyles["form-element"]}>
+                        <p className={standartElement["text-standart"]}>Наименование</p>
+                        <input type="text" value={name} className={standartElement["input-standart"]}  onChange={setNameHandler}/>
                     </div>
-                    <div className="form-element">
-                        <p className="text-standart">Цена</p>
-                        <input type="number" value={price} className="inputStandart" onChange={setPriceHandler}/>
+                    <div className={formStyles["form-element"]}>
+                        <p className={standartElement["text-standart"]}>Цена</p>
+                        <input type="number" value={price} className={standartElement["input-standart"]}  onChange={setPriceHandler}/>
                     </div>
-                    <div className="form-element">
-                        <p className="text-standart">Дата</p>
-                        <input type="date" value={date} className="inputStandart" onChange={setDateHandler}/>
+                    <div className={formStyles["form-element"]}>
+                        <p className={standartElement["text-standart"]}>Дата</p>
+                        <input type="date" value={date} className={standartElement["input-standart"]} onChange={setDateHandler}/>
                     </div>
-                    <div className="form-element">
-                        <button className="button-standart" type="submit" onClick={submitHandler}>Новый товар</button>
+                    <div className={formStyles["form-element"]}>
+                        <button className={standartElement["button-standart"]} type="submit" onClick={submitHandler}>Новый товар</button>
                         
-                        <button className="button-standart" onClick={cancelFormHandler}>Отмена</button>
+                        <button className={standartElement["button-standart"]} onClick={cancelFormHandler}>Отмена</button>
                     </div>
                 </form>
         )

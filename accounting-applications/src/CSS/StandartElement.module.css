@@ -18,6 +18,11 @@
     margin: 5px;
   }
   
+  .button-standart:hover {
+    background-color: rgb(68, 68, 136);
+    cursor: pointer;
+  }
+
   .text-standart {
     font-size: 25px;
   }
