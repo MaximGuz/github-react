@@ -1,0 +1,8 @@
+.form-center {
+    width: 50%;
+    margin: auto;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px  black;
+    padding: 0;
+}
