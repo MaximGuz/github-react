@@ -10,14 +10,15 @@ const Modal = (props) => {
     return(
         <div className={styles.popup} style={{display: props.modalFlg ? "block" : "none"}} onClick={CloseModal}>
             <div className={styles["popup-block"]}>
-                <div className={styles["modal-header"]}>
+                <header className={styles["modal-header"]}>
                     Некорректный ввод
-                </div>
-                <div className={styles["modal-error-text"]}>FFFFF
-                </div>
-                <div>
+                </header>
+                <ul className={styles["modal-error-text"]}>
+                    {props.modalError}
+                </ul>
+                <footer className={styles.actions}>
                     <button onClick={CloseModal} className={styles["button-on-modal"]}>Закрыть</button>
-                </div>
+                </footer>
             </div>
         </div>
     );
