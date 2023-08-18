@@ -7,7 +7,7 @@ const UserList = (props) => {
     <div className={styles["dop-block"]}>
          <div className={styles["form-center"]}>
            {props.users.map((el)=> (
-                <User name={el.name} age={el.age} key={el.id}/>
+                <User users={props.users} name={el.name} age={el.age} key={el.id} id={el.id} deleteElementHandler={props.deleteElementHandler}/>
            ))} 
         </div>
     </div>);
