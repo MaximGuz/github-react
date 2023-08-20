@@ -1,0 +1,24 @@
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+  
+.nav li {
+  margin: 0;
+  margin-left: 3rem;
+}
+  
+.basket {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 2rem;
+}
+  
+.shopping-cart {
+  max-width: 25px; 
+  max-height: 25px;
+  vertical-align: text-bottom;
+}
