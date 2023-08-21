@@ -1,0 +1,16 @@
+.button-plus-minus {
+    background-color: white;
+    font-size: 1.2em;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);
+    cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    margin-left: 0.2em;
+}
+
+.button-plus-minus:hover {
+    background-color: rgb(235, 235, 235);
+}
