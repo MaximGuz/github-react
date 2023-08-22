@@ -1,22 +1,24 @@
 import React, { useState } from 'react'
 
 const BasketContext = React.createContext({
-    totalCount: {},
-    setTotalCountHandler: () => {}, 
+    totalCount: [{}],
+    setTotalCount: () => {}, 
 });
 
 export const BasketContextProvider = (props) => {
-    const [totalCount, setTotalCount] = useState(0);
+    const [totalCount, setTotalCount] = useState([]);
+    console.log(totalCount);
+
 
     const setTotalCountHandler = (item) => {
         setTotalCount((prev) => {
-            if(item.lastOp === '+'){
-                return prev + 1;
-            }else if(item.lastOp === '-'){
-                return prev - 1;
-            } else {
-                return prev;
-            }           
+                for (let i = 0; i < prev.length; i++) {
+                    if(prev[i].id === item.id) {
+                        prev[i].count = Number(prev[i].count) + Number(item.count);
+                        return [...prev]
+                    }
+                }
+                return [...prev, item]
         });
     };
     
