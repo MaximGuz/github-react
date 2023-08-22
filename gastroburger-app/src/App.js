@@ -3,7 +3,6 @@ import Header from './Components/Header';
 import Description from './Components/Description';
 import burger_atmosphere from './images/burger-atmosphere.jpg'
 import Menu from './Components/Menu';
-import { useState } from 'react';
 
 function App() {
   return (

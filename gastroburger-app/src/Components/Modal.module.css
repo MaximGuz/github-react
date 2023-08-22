@@ -1,0 +1,33 @@
+.backdrop {
+    z-index: 11;
+    position: fixed;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(17, 17, 17, 0.5);
+    cursor: pointer;
+}
+
+.popup {
+    z-index: 15;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    position: relative;
+    margin: 0 auto;
+    top: 50%;
+    width: 50%;
+    padding: 10px;
+    cursor: default;
+}
+
+.active {
+    display: block;
+}
+
+.itog {
+    display: flex;
+    justify-content: space-between;
+}
