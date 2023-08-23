@@ -17,9 +17,9 @@
     background-color: white;
     position: relative;
     margin: 0 auto;
-    top: 50%;
+    top: 30%;
     width: 50%;
-    padding: 10px;
+    padding: 20px;
     cursor: default;
 }
 
@@ -30,4 +30,49 @@
 .itog {
     display: flex;
     justify-content: space-between;
+}
+
+.itog-label {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.itog-summa {
+    font-size: 2em;
+    color: #FDE760;
+    font-weight: bold;
+	text-shadow: 
+		-0   -1px 0   #000000,
+		 0   -1px 0   #000000,
+		-0    1px 0   #000000,
+		 0    1px 0   #000000,
+		-1px -0   0   #000000,
+		 1px -0   0   #000000,
+		-1px  0   0   #000000,
+		 1px  0   0   #000000,
+		-1px -1px 0   #000000,
+		 1px -1px 0   #000000,
+		-1px  1px 0   #000000,
+		 1px  1px 0   #000000,
+		-1px -1px 0   #000000,
+		 1px -1px 0   #000000,
+		-1px  1px 0   #000000,
+		 1px  1px 0   #000000;
+}
+
+.empty-basket {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.close-empty-basket {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.close-order {
+    margin-top: 1.5em;
+    text-align: center;
+    font-size: 1.5em;
 }

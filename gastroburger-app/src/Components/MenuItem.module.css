@@ -21,7 +21,7 @@
      1px -1px 1px #000000,
     -1px  1px 1px #000000,
      1px  1px 1px #000000;
-     border: 1px solid pink;
+
 }
 
 .item-name {
@@ -30,14 +30,14 @@
     font-weight: bold;
     font-size: 1.5em;
     margin-bottom: 0.5em;
-    border: 1px solid green;
+
 }
 
 .item-desc {
     font-size: 1em;
     font-style: italic;
     margin-bottom: 0.5em;
-    border: 1px solid blue;
+
 }
 
 .add-button { 
@@ -63,6 +63,5 @@
 }
 
 .a4 {
-    border: 1px solid black;
    text-align: right;
 }
