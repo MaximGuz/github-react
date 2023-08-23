@@ -9,9 +9,8 @@ const MenuItem = (props) => {
     const ctx = useContext(BasketContext);
 
     const addToBasket = () => {
-        ctx.setTotalCountHandler({name: props.name, desc: props.desc, cost: props.cost, id: props.id, count: count});
+        ctx.setItemCountHandler({name: props.name, desc: props.desc, cost: props.cost, id: props.id, count: count});
     }
-
 
     return(<>
             <div className={styles.a1}>
