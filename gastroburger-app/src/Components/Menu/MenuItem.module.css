@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     color: #C51E34;
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
+    font-size: 25px;
+    margin-bottom: 15px;
     text-shadow: 
     -0   -1px 1px #000000,
      0   -1px 1px #000000,
@@ -28,25 +28,26 @@
     display: flex;
     justify-content: space-between;
     font-weight: bold;
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
+    font-size: 30px;
+    margin-bottom: 10px;
 
 }
 
 .item-desc {
-    font-size: 1em;
+    font-size: 15px;
     font-style: italic;
-    margin-bottom: 0.5em;
+    margin-bottom: 10px;
 
 }
 
 .add-button { 
-    font-size: 1.3rem;
+    font-size: 20px;
     font-weight: bold;
+    transition: 200ms;
 }
 
-.button-plus-minus {
-    margin-left: 1em;
+.add-button:active {
+    transform: scale(110%)
 }
 
 .a1 {
@@ -59,9 +60,5 @@
 }
 
 .a3 {
-
-}
-
-.a4 {
-   text-align: right;
+   text-align: center;
 }

@@ -1,8 +1,8 @@
 import styles from './App.module.css';
-import Header from './Components/Header';
-import Description from './Components/Description';
+import Header from './Components/Header/Header';
+import Description from './Components/Description/Description';
 import burger_atmosphere from './images/burger-atmosphere.jpg'
-import Menu from './Components/Menu';
+import Menu from './Components/Menu/Menu';
 
 function App() {
   return (

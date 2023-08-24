@@ -1,9 +1,9 @@
 import styles from "./Navigation.module.css";
-import shopping_cart from "../images/free-icon-shopping-cart.png"
-import Button from "../UI/Button";
+import shopping_cart from "../../images/free-icon-shopping-cart.png"
+import Button from "../../UI/Button";
 import { useContext, useState } from "react";
-import BasketContext from "../Context/BasketContext";
-import Modal from "./Modal";
+import BasketContext from "../../Context/BasketContext";
+import Modal from "../Modal/Modal";
 import { createPortal } from 'react-dom';
 
 const Navigation = (props) => {
