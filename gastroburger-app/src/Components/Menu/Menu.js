@@ -1,7 +1,7 @@
 import styles from './Menu.module.css'
-import Wrapper from '../UI/Wrapper';
+import Wrapper from '../../UI/Wrapper';
 import { useContext} from 'react';
-import MenuContext from '../Context/MenuContext';
+import MenuContext from '../../Context/MenuContext';
 import MenuItem from './MenuItem';
 
 

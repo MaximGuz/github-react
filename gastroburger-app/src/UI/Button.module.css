@@ -2,7 +2,7 @@
   font: inherit;
   background: #FDE760;
   border: 1px solid black;
-  padding: 0.5rem 1.5rem;
+  padding: 10px 30px;
   color: #C51E34;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.26);
@@ -25,6 +25,7 @@
 		 1px -1px 1px #000000,
 		-1px  1px 1px #000000,
 		 1px  1px 1px #000000;
+
 }
 
 .button:hover {

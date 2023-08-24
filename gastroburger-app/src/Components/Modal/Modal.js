@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import styles from './Modal.module.css'
-import BasketContext from "../Context/BasketContext";
-import BasketItem from "./BasketItem";
-import Button from "../UI/Button";
+import BasketContext from "../../Context/BasketContext";
+import BasketItem from "../Basket/BasketItem";
+import Button from "../../UI/Button";
 
 const Modal = (props) => {
     const ctx = useContext(BasketContext);

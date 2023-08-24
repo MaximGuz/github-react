@@ -1,13 +1,15 @@
 .backdrop {
     z-index: 11;
     position: fixed;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: rgb(17, 17, 17, 0.5);
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .popup {
@@ -24,7 +26,8 @@
 }
 
 .active {
-    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .itog {
@@ -33,12 +36,12 @@
 }
 
 .itog-label {
-    font-size: 2em;
+    font-size: 30px;
     font-weight: bold;
 }
 
 .itog-summa {
-    font-size: 2em;
+    font-size: 30px;
     color: #FDE760;
     font-weight: bold;
 	text-shadow: 
@@ -61,18 +64,18 @@
 }
 
 .empty-basket {
-    font-size: 1.5em;
+    font-size: 30px;
     text-align: center;
-    margin-bottom: 1.5em;
+    margin-bottom: 30px;
 }
 
 .close-empty-basket {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 30px;
 }
 
 .close-order {
-    margin-top: 1.5em;
+    margin-top: 30px;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 30px;
 }
