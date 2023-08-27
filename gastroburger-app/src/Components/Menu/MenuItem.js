@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import styles from './MenuItem.module.css'
 import Input from '../../UI/Input';
 import Button from '../../UI/Button';
@@ -7,9 +7,11 @@ import BasketContext from '../../Context/BasketContext';
 const MenuItem = (props) => {
     const [count, setCount] = useState(0);
     const ctx = useContext(BasketContext);
+    const countRef = useRef(null);
 
     const addToBasket = () => {
         ctx.setItemCountHandler({name: props.name, desc: props.desc, cost: props.cost, id: props.id, count: count});
+        countRef.current.clearInput();
     }
 
     return(<>
@@ -22,7 +24,7 @@ const MenuItem = (props) => {
                 <div>
                     <div>
                         <span style={{fontWeight: 'bold', fontSize: '20px'}}>Количество: </span>
-                        <Input type='number' min='0' value={count} onChange={(e)=>setCount(e.target.value)}/>
+                        <Input ref={countRef} type='number' min='0' defaultValue='0' onChange={(e)=>setCount(e.target.value)}/>
                     </div>
                     <div  className={styles.a3} style={{marginTop: '30px'}}><Button className={styles['add-button']} onClick={addToBasket}>Добавить</Button></div>
                 </div>
