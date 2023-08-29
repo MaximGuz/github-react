@@ -1,0 +1,10 @@
+.wrap {
+    width: 50%;
+    position: relative;
+    text-align: center;
+    margin: 2% auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #B1A296;
+}

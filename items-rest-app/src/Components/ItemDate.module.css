@@ -1,0 +1,26 @@
+.date-component{
+    border: 3px solid White;
+    background-color: rgb(62, 63, 158);
+    width: 100px;
+    border-radius: 10px;
+    float:right;
+}
+
+.date-component div {
+    padding: 5px;
+    text-align: center;
+    color: white;
+  }
+  
+  #date-data-year {
+    font-size: 15px;
+  }
+  
+  #date-data-month {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  #date-data-day {
+    font-size: 25px;
+  }
