@@ -3,6 +3,7 @@ import Button from './UI/Button';
 import ItemsList from './Components/ItemsList';
 import Wrapper from './UI/Wrapper';
 import NewItem from './Components/NewItem';
+import styles from './App.module.css'
 
 const App = () => {
     const [items, setItems] = useState([]);
@@ -38,16 +39,16 @@ const App = () => {
     let content;
 
     if (isLoading) {
-        content = <p>Загрузка шуток...</p>
+        content = <p className={styles.info}>Загрузка данных...</p>
     }
     if (isError) {
-        content = <p>Произошла ошибка...</p>
+        content = <p className={styles.info}>Произошла ошибка...</p>
     }
     if(!isLoading && !isError && items.length > 0) {
         content = <ItemsList items={items}/>
     }
     if(!isLoading && !isError && items.length === 0) {
-      content = <p>Выполните поиск</p>
+      content = <p className={styles.info}>Выполните поиск данных</p>
     }
 
 
@@ -56,9 +57,7 @@ const App = () => {
           <NewItem />
         </Wrapper>
         <Wrapper>
-            <Button onClick={fetchItemsFunction}>Извлечь данные</Button>
-        </Wrapper>
-        <Wrapper>
+          <Button onClick={fetchItemsFunction}>Загрузить</Button>
           {content}
         </Wrapper>
     </>);
