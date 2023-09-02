@@ -1,0 +1,69 @@
+.form-control {
+    margin-bottom: 10px;
+}
+
+.form-control label {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.form-control input {
+    font-size: 20px;
+    width: 400px;
+}
+
+.form-control textarea {
+    font-size: 20px;
+    width: 400px;
+}
+
+
+.client-data {
+    margin: 20px auto;
+    width: 50%;
+    height: 300px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    overflow: auto;
+    padding: 20px;
+}
+
+.data-title {
+    font-size: 25px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.invalid input {
+    border: 2px solid #e60808;
+    background-color: #e3caca;
+}
+
+.invalid textarea {
+    border: 2px solid #e60808;
+    background-color: #e3caca;
+}
+  
+.invalid input:focus {
+    border-color: #e87c01;
+    background-color: #decfbe;
+}
+
+.error-text {
+    color: #e60808;
+}
+
+.invalid-button,
+.invalid-button:hover,
+.invalid-button:active {
+  background-color: grey;
+  color: white;
+  cursor: not-allowed;
+}
+  
+.close-order {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 30px;
+}
