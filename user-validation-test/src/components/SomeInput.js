@@ -1,10 +1,33 @@
-import { useState } from "react";
+import { useReducer } from "react";
+
+const reduceForm = (state, action) => {
+  switch (action.type) {
+    case "setEnterName": {
+      return { ...state , enteredName: action.val};
+    }
+    case "setEnterAge": {
+      return { ...state , enteredAge: action.val};
+    }
+    case "setUserTouchName": {
+      return { ...state , userTouchName: action.val};
+    }
+    case "setUserTouchAge": {
+      return { ...state , userTouchAge: action.val};
+    }
+    default: {
+      return {...state};
+    }
+  }
+}
 
 const SomeInput = (props) => {
-  const [enteredName, setEnteredName] = useState('');
-  const [enteredAge, setEnteredAge] = useState('');
-  const [userTouchName, setUserTouchName] = useState(false);
-  const [userTouchAge, setUserTouchAge] = useState(false);
+  const [formValid, dispatcher] = useReducer(reduceForm, {enteredName: '', enteredAge: '', userTouchName: false, userTouchAge: false}) 
+  // const [enteredName, setEnteredName] = useState('');
+  // const [enteredAge, setEnteredAge] = useState('');
+  // const [userTouchName, setUserTouchName] = useState(false);
+  // const [userTouchAge, setUserTouchAge] = useState(false);
+
+  const {enteredName, enteredAge, userTouchName, userTouchAge} = formValid;
 
 
   const nameIsValid = enteredName.trim() !== '' || userTouchName === false ? true : false;
@@ -18,25 +41,43 @@ const SomeInput = (props) => {
 
 
   const enteredNameHandler = (e) => {
-    setEnteredName(e.target.value);
+    //setEnteredName(e.target.value);
+    dispatcher({
+      type: 'setEnterName',
+      val: e.target.value,
+    });
   }
 
   const enteredAgeHandler = (e) => {
-    setEnteredAge(e.target.value);
+    //setEnteredAge(e.target.value);
+    dispatcher({
+      type: 'setEnterAge',
+      val: e.target.value,
+    });
   }
 
   const touchNameHandler = (e) => {
-    setUserTouchName(true);
+    //setUserTouchName(true);
+    dispatcher({
+      type: 'setUserTouchName',
+      val: true,
+    });
   }
 
   const touchAgeHandler = () => {
-    setUserTouchAge(true);
+    //setUserTouchAge(true);
+    dispatcher({
+      type: 'setUserTouchAge',
+      val: true,
+    });
   }
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setUserTouchName(true);
-    setUserTouchAge(true);
+    //setUserTouchName(true);
+    //setUserTouchAge(true);
+    touchAgeHandler();
+    touchNameHandler();
   }
 
   
