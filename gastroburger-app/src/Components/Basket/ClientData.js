@@ -45,13 +45,19 @@ const ClientData = (props) => {
             Address: enteredAddress,
             Phone: enteredPhone,
             Email: enteredEmail,
-            Summa: ctx.totalCount,
+            Summa: ctx.totalSum,
         };
         
         props.onSumbitHandler(sendData);
         props.sucessOrderHandler(true);
      };
      
+     const hideModalHandler = () => {
+        props.sucessOrderHandler(false);
+        //setTimeout(()=>props.sucessOrderHandler(false), 500);
+        props.hideModal();
+        ctx.resetBasket();
+     };
 
     return (<><form className={styles['client-data']} onSubmit={sendHttp}>
         <div className={styles['data-title']}>Данные получателя</div>
