@@ -8,25 +8,37 @@ import ClientData from "../Basket/ClientData";
 const Modal = (props) => {
     const ctx = useContext(BasketContext);
     const [sucessOrder, setSucessOrder] = useState(false);
+    const [submitAvaliable, setSubmitAvaliable] = useState(false);
 
     const sucessOrderHandler = (state) => {
         setSucessOrder(state);
     };
 
     const hideModal = () => {
+        setTimeout(()=> {
+            setSubmitAvaliable(false);
+        }, 500);
         props.showModal(false);
-        setTimeout(()=>setSucessOrder(false), 500);
+    };
+
+    const hideModalHandler = () => {
+        setTimeout(()=> {
+            setSucessOrder(false);
+            setSubmitAvaliable(false);
+            ctx.resetBasket();
+        }, 500);
+        hideModal();
     };
 
     const onSumbitHandler = async(userData) => {
         let newItemCount = [{}];
 
-        for (let i=0; i < ctx.itemCount.length; i++) {
+        for (let i=0; i < ctx.itemsList.length; i++) {
             newItemCount.push({
-                count: ctx.itemCount[i].count,
-                cost: ctx.itemCount[i].cost,
-                name: ctx.itemCount[i].name,
-                sumPosition: Number(ctx.itemCount[i].count) *  Number(ctx.itemCount[i].cost),
+                count: ctx.itemsList[i].count,
+                cost: ctx.itemsList[i].cost,
+                name: ctx.itemsList[i].name,
+                sumPosition: Number(ctx.itemsList[i].count) *  Number(ctx.itemsList[i].cost),
             });
         };
 
@@ -46,18 +58,24 @@ const Modal = (props) => {
         }
     };
 
+    const modalButtons = (
+            <div className={styles['close-order']}>
+                <Button onClick={()=> setSubmitAvaliable(true)}>Оформить заказ</Button>  <Button onClick={hideModal}>Закрыть</Button>
+            </div>);
+
     const fullBasket = (<div className={styles.popup} onClick={(e)=>{
                 e.preventDefault();
                 e.stopPropagation();
                 }}>
-            {ctx.itemCount.map((el)=> {
+            {ctx.itemsList.map((el)=> {
             return (<BasketItem name={el.name} cost={el.cost} count={el.count} key={el.id} id={el.id} setOneItem={ctx.setOneItem}/>)
             })}
             <div className={styles.itog}>
                 <div className={styles['itog-label']}>Итого</div>
-                <div className={styles['itog-summa']}>{ctx.totalCount}</div>
+                <div className={styles['itog-summa']}>{ctx.totalSum}</div>
             </div>
-            <ClientData hideModal={hideModal} sucessOrderHandler={sucessOrderHandler} onSumbitHandler={onSumbitHandler}/>
+            {submitAvaliable && <ClientData hideModal={hideModal} sucessOrderHandler={sucessOrderHandler} onSumbitHandler={onSumbitHandler}/>}
+            {!submitAvaliable && modalButtons}
         </div>);
 
     const emptyBasket = (<div className={styles.popup} onClick={(e)=>{
@@ -68,12 +86,12 @@ const Modal = (props) => {
     const sucessBasket = (<div className={styles.popup} onClick={(e)=>{
         e.preventDefault();
         e.stopPropagation();
-        }}><div className={styles['empty-basket']}>Заказ успешно оформлен. Оператор свяжется с вами в ближайшее время</div><div className={styles['close-empty-basket']}><Button onClick={hideModal}>Закрыть</Button></div></div>)
+        }}><div className={styles['empty-basket']}>Заказ успешно оформлен. Оператор свяжется с вами в ближайшее время</div><div className={styles['close-empty-basket']}><Button onClick={hideModalHandler}>Закрыть</Button></div></div>)
 
     return(<div onClick={hideModal} className={`${styles.backdrop} ${props.active ? styles.active : ''}`}>
-        {ctx.itemCount.length === 0 && emptyBasket}
-        {ctx.itemCount.length > 0 && sucessOrder && sucessBasket}
-        {ctx.itemCount.length > 0 && !sucessOrder && fullBasket}
+        {ctx.itemsList.length === 0 && emptyBasket}
+        {ctx.itemsList.length > 0 && sucessOrder && sucessBasket}
+        {ctx.itemsList.length > 0 && !sucessOrder && fullBasket}
     </div>)
 }
 

@@ -1,38 +1,40 @@
 import React, { useEffect, useState } from 'react'
 
 const BasketContext = React.createContext({
-    itemCount: [{}],
+    itemsList: [{}],
+    totalSum: 0,
     setItemCount: () => {}, 
     setOneItem: () => {},
+    resetBasket: () => {},
 });
 
 
 
 export const BasketContextProvider = (props) => {
-    const [itemCount, setItemCount] = useState([]);
-    const [totalCount, setTotalCount] = useState(0);
+    const [itemsList, setItemsList] = useState([]);
+    const [totalSum, setTotalSum] = useState(0);
 
     useEffect(()=>{
         let sum = 0;
         let idx = undefined;
-        for (let i = 0; i < itemCount.length; i++) {
-            sum += (itemCount[i].cost*itemCount[i].count);
-            if(itemCount[i].count === 0) {
-                idx = itemCount[i].id;
+        for (let i = 0; i < itemsList.length; i++) {
+            sum += (itemsList[i].cost*itemsList[i].count);
+            if(itemsList[i].count === 0) {
+                idx = itemsList[i].id;
             }
         }
-        setTotalCount((prev)=>sum);
+        setTotalSum((prev)=>sum);
 
         if (idx !== undefined){
-            let newItems = itemCount.filter((n) => {           
+            let newItems = itemsList.filter((n) => {           
                 return n.id !== idx;
               })
-            setItemCount(newItems);
+            setItemsList(newItems);
         }    
-    },[itemCount]);
+    },[itemsList]);
     
     const setItemCountHandler = (item) => {
-        setItemCount((prev) => {
+        setItemsList((prev) => {
                 for (let i = 0; i < prev.length; i++) {
                     if(prev[i].id === item.id) {
                         prev[i].count = Number(prev[i].count) + Number(item.count);
@@ -44,7 +46,7 @@ export const BasketContextProvider = (props) => {
     };
 
     const setOneItem = (id, oper) => {
-        setItemCount((prev) => {
+        setItemsList((prev) => {
                 for (let i = 0; i < prev.length; i++) {
                     if(prev[i].id === id) {
                         if(oper === "+") {
@@ -59,8 +61,17 @@ export const BasketContextProvider = (props) => {
         });
     };
 
+    const resetBasket = () => {
+        setItemsList([]);
+    };
+
     
-    return (<BasketContext.Provider value={{itemCount: itemCount, setItemCountHandler: setItemCountHandler, totalCount: totalCount, setOneItem: setOneItem}}>
+    return (<BasketContext.Provider value={{
+        itemsList, 
+        totalSum, 
+        setItemCountHandler, 
+        setOneItem,
+        resetBasket}}>
         {props.children}
     </BasketContext.Provider>);
 };

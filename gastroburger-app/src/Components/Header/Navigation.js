@@ -22,7 +22,7 @@ const Navigation = (props) => {
         <ul>
             <li>
               <div className={styles.basket}>
-                <Button onClick={()=>setActive(true)}><img alt='Корзина' src={shopping_cart} className={styles["shopping-cart"]}/> Корзина <div className={styles['count-item']}>{ctx.itemCount.length}</div></Button>
+                <Button onClick={()=>setActive(true)}><img alt='Корзина' src={shopping_cart} className={styles["shopping-cart"]}/> Корзина <div className={styles['count-item']}>{ctx.itemsList.length}</div></Button>
               </div>
             </li>
         </ul>
